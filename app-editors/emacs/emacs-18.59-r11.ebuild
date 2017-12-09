@@ -1,6 +1,5 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -10,7 +9,7 @@ DESCRIPTION="The extensible self-documenting text editor"
 HOMEPAGE="https://www.gnu.org/software/emacs/"
 SRC_URI="ftp://ftp.gnu.org/old-gnu/emacs/${P}.tar.gz
 	ftp://ftp.splode.com/pub/users/friedman/emacs/${P}-linux22x-elf-glibc21.diff.gz
-	https://dev.gentoo.org/~ulm/emacs/${P}-patches-9.tar.xz"
+	https://dev.gentoo.org/~ulm/emacs/${P}-patches-10.tar.xz"
 
 LICENSE="GPL-1+ GPL-2+ BSD" #HPND
 SLOT="18"
@@ -18,10 +17,10 @@ KEYWORDS="amd64 x86"
 IUSE="abi_x86_x32"
 
 RDEPEND=">=app-eselect/eselect-emacs-1.16
-	sys-libs/ncurses:0
+	sys-libs/ncurses:0=
 	amd64? (
-		abi_x86_x32? ( >=sys-libs/ncurses-5.9-r3:0[abi_x86_x32(-)?] )
-		!abi_x86_x32? ( >=sys-libs/ncurses-5.9-r3:0[abi_x86_32(-)] )
+		abi_x86_x32? ( >=sys-libs/ncurses-5.9-r3:0=[abi_x86_x32(-)?] )
+		!abi_x86_x32? ( >=sys-libs/ncurses-5.9-r3:0=[abi_x86_32(-)] )
 	)"
 #	X? ( x11-libs/libX11[-xcb] )
 DEPEND="${RDEPEND}
